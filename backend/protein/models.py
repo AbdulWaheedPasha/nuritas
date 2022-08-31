@@ -15,7 +15,7 @@ class Protein(models.Model):
     five_hr_protein_abundance = models.BigIntegerField()
     six_hr_protein_abundance = models.BigIntegerField()
     nine_hr_protein_abundance = models.BigIntegerField()
-    twelve_hr_protein_abundance  = models.BigIntegerField()
+    twelve_hr_protein_abundance = models.BigIntegerField()
     twenty_four_hr_protein_abundance = models.BigIntegerField()
 
     cellular_processes = models.CharField(max_length=512)
@@ -24,6 +24,6 @@ class Protein(models.Model):
 
     def __str__(self):
         return str(self.protein_id)
-        
+
     class Meta:
         ordering = ["-pk"]

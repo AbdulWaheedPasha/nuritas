@@ -1,10 +1,45 @@
-#hidden system files
-.idea
-.vscode
+### Python ####################################################################
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+### OSX #######################################################################
+.DS_Store
+.AppleDouble
+.LSOverride
 .DS_Store
 
-#python files
-__pycache__
+
+### VSCode ####################################################################
+.idea
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+
 
 #Environment files
 env
