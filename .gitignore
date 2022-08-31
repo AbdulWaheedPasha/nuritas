@@ -1,1 +1,13 @@
+#hidden system files
+.idea
+.vscode
+.DS_Store
+
+#python files
+__pycache__
+
+#Environment files
 env
+
+# ignore all logs
+*.log
