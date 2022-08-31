@@ -39,7 +39,8 @@ class Command(BaseCommand):
                 reactome_pathways,
             ) in data:
 
-                if count > 1:
+                if count > 0:
+
                     protein = Protein(
                         protein_id=protein_id,
                         accession=accession,
@@ -87,10 +88,11 @@ class Command(BaseCommand):
 
                 count += 1
 
-            if len(proteins) > 1:
+            if len(proteins) > 0:
+                total_protein_count = 0
                 # Creating bulk protien
                 try:
-                    Protein.objects.bulk_create(proteins)
+                    total_protein_count = len(Protein.objects.bulk_create(proteins))
                 except Exception as e:
                     self.stdout.write(self.style.ERROR(f"Error: {str(e)}."))
                     self.stdout.write(
@@ -107,7 +109,7 @@ class Command(BaseCommand):
         end_time = timezone.now()
         self.stdout.write(
             self.style.SUCCESS(
-                f"Loading CSV took: {(end_time-start_time).total_seconds()} seconds."
+                f"Loading CSV took: {(end_time-start_time).total_seconds()} seconds.Total Record added : {total_protein_count}"
             )
         )
 
