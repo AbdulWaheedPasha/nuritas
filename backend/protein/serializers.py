@@ -20,7 +20,7 @@ class ProtienAbundanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Protein
         fields = [
-            "protein_id",
+            # "protein_id",
             "zero_hr_protein_abundance",
             "half_hr_protein_abundance",
             "one_hr_protein_abundance",
