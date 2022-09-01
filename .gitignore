@@ -43,6 +43,7 @@ MANIFEST
 
 #Environment files
 env
+.env
 
 # ignore all logs
 *.log

@@ -18,9 +18,9 @@ class Protein(models.Model):
     twelve_hr_protein_abundance = models.BigIntegerField()
     twenty_four_hr_protein_abundance = models.BigIntegerField()
 
-    cellular_processes = models.CharField(max_length=512)
-    protein_functions = models.CharField(max_length=512)
-    reactome_pathways = models.CharField(max_length=512)
+    cellular_processes = models.TextField()
+    protein_functions = models.TextField()
+    reactome_pathways = models.TextField()
 
     def __str__(self):
         return str(self.protein_id)
