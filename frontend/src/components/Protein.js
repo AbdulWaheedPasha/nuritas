@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Accordion from "react-bootstrap/Accordion";
+import React from "react";
 import Items from "../components/Items";
-import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
+import Accordion from "react-bootstrap/Accordion";
 
 function Protein({ protein }) {
   return (
@@ -26,40 +25,35 @@ function Protein({ protein }) {
           </Card.Text>
 
           <Accordion flush>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>
-                Cellular Processes &nbsp;
-                <Badge pill bg="dark">
-                  7
-                </Badge>
-              </Accordion.Header>
-              <Accordion.Body>
-                {protein.cellular_processes}
+            {protein.cellular_processes ? (
+              <Items
+                itemName="Cellular Processes"
+                items={protein.cellular_processes}
+                ekey="0"
+              />
+            ) : (
+              <p className="text-center"></p>
+            )}
 
-                {/* list the array  */}
-                {/* <Items items={cellular} /> */}
-              </Accordion.Body>
-            </Accordion.Item>
+            {protein.protein_functions ? (
+              <Items
+                itemName="Protein Functions"
+                items={protein.protein_functions}
+                ekey="1"
+              />
+            ) : (
+              <p className="text-center"></p>
+            )}
 
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>
-                Protein Functions &nbsp;
-                <Badge pill bg="dark">
-                  9
-                </Badge>
-              </Accordion.Header>
-              <Accordion.Body>{protein.protein_functions}</Accordion.Body>
-            </Accordion.Item>
-
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>
-                Reactome Pathways &nbsp;
-                <Badge pill bg="dark">
-                  12
-                </Badge>
-              </Accordion.Header>
-              <Accordion.Body>{protein.reactome_pathways}</Accordion.Body>
-            </Accordion.Item>
+            {protein.reactome_pathways ? (
+              <Items
+                itemName=" Reactome Pathways"
+                items={protein.reactome_pathways}
+                ekey="2"
+              />
+            ) : (
+              <p className="text-center"></p>
+            )}
           </Accordion>
         </Card.Body>
       </Card>

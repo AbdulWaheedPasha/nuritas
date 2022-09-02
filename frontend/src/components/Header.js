@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container, Row, NavDropdown } from "react-bootstrap";
-import SearchBox from "./SearchBox";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
 function Header() {
   return (
