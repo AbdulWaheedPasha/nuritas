@@ -12,6 +12,7 @@ get summarize detail of protein for a given protein ID and also view visualizati
 - [Tech stack](#tech-stack)
 - [Packages and extensions](#packages-and-extensions)
 - [Running this app](#running-this-app)
+- [REST api](#rest-api)
 
 ## Tech stack
 
@@ -89,3 +90,53 @@ docker-compose down
 
 You can start things up again with `docker-compose up` and unlike the first
 time it should only take seconds.
+
+## REST API
+
+The REST API to the protein app is described below.
+To get summarize detail of protein for a given protein ID.
+
+### Request
+
+`GET /protein/<int:pk>`
+
+
+    http://127.0.0.1/api/protein/26
+
+### Response
+
+    {
+    "protein_id": 26,
+    "accession": "P26039|TLN1_MOUSE",
+    "avg_mass": 269819,
+    "description": "Talin-1 OS=Mus musculus GN=Tln1 PE=1 SV=2",
+    "cellular_processes": "['cell adhesion', 'cell-substrate junction assembly']",
+    "protein_functions": "['actin filament binding', 'integrin binding']",
+    "reactome_pathways": "['Platelet degranulation', 'Integrin alphaIIb beta3 signaling', 'GRB2:SOS provides linkage to MAPK signaling for Integrins', 'p130Cas linkage to MAPK signaling for integrins']"
+    }
+
+
+To get numeric timepoint information for a given protein ID
+
+### Request
+
+`GET /protein/<int:pk>?numeric_timepoint=1`
+
+
+    http://127.0.0.1/api/protein/26?numeric_timepoint=1
+
+### Response
+
+    {
+        "zero_hr_protein_abundance": 1752600000,
+        "half_hr_protein_abundance": 2531600000,
+        "one_hr_protein_abundance": 2478000000,
+        "two_hr_protein_abundance": 2255400000,
+        "three_hr_protein_abundance": 2485300000,
+        "four_hr_protein_abundance": 2449800000,
+        "five_hr_protein_abundance": 2428100000,
+        "six_hr_protein_abundance": 23288000000,
+        "nine_hr_protein_abundance": 2512400000,
+        "twelve_hr_protein_abundance": 2631900000,
+        "twenty_four_hr_protein_abundance": 2175000000
+    }
