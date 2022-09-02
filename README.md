@@ -140,3 +140,10 @@ To get numeric timepoint information for a given protein ID
         "twelve_hr_protein_abundance": 2631900000,
         "twenty_four_hr_protein_abundance": 2175000000
     }
+
+# Changelog
+
+## v1.1.0
+
+### Added or Changed
+- node 18.8.0 update

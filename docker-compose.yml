@@ -12,7 +12,7 @@ services:
      - db
 
   frontend:
-    image: node:15.13-alpine
+    image: node:18.8.0-alpine
     env_file:
       - ./.env
     command: sh entrypoint.sh
