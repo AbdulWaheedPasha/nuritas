@@ -4,12 +4,8 @@ import Accordion from "react-bootstrap/Accordion";
 import Badge from "react-bootstrap/Badge";
 
 function Items({ itemName, items, ekey }) {
-  console.log("items 1", items);
   items = items.replace(/'/g, '"'); //replacing all ' with "
   items = JSON.parse(items);
-  console.log("JSON", items);
-  console.log("JSON", items.length);
-  console.log("Key---", ekey);
   return (
     <div>
       <Accordion.Item eventKey={ekey}>
